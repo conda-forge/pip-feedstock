@@ -1,13 +1,15 @@
-{% set version="8.1.2" %}
+{% set name = "pip" %}
+{% set version = "8.1.2" %}
+{% set sha256 = "4d24b03ffa67638a3fa931c09fd9e0273ffa904e95ebebe7d4b1a54c93d7b732" %}
 
 package:
-  name: pip
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: pip-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/p/pip/pip-{{ version }}.tar.gz
-  md5: 87083c0b9867963b29f7aba3613e8f4a
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
   number: 0
@@ -33,6 +35,7 @@ test:
 about:
   home: https://pip.pypa.io/en/stable/
   license: MIT
+  license_family: MIT
   license_file: LICENSE.txt
   summary: PyPA recommended tool for installing Python packages
   doc_url: https://pip.pypa.io/en/stable/
