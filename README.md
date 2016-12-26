@@ -11,6 +11,18 @@ Summary: PyPA recommended tool for installing Python packages
 
 
 
+Current build status
+====================
+
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/pip-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/pip-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/pip-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/pip-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/pip-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/pip-feedstock/branch/master)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pip/badges/version.svg)](https://anaconda.org/conda-forge/pip)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pip/badges/downloads.svg)](https://anaconda.org/conda-forge/pip)
+
 Installing pip
 ==============
 
@@ -31,7 +43,6 @@ It is possible to list all of the versions of `pip` available on your platform w
 ```
 conda search pip --channel conda-forge
 ```
-
 
 
 About conda-forge
@@ -67,18 +78,6 @@ Terminology
 
 **conda-forge** - the place where the feedstock and smithy live and work to
                   produce the finished article (built conda distributions)
-
-Current build status
-====================
-
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/pip-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/pip-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/pip-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/pip-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/pip-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/pip-feedstock/branch/master)
-
-Current release info
-====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pip/badges/version.svg)](https://anaconda.org/conda-forge/pip)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pip/badges/downloads.svg)](https://anaconda.org/conda-forge/pip)
 
 
 Updating pip-feedstock
