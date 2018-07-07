@@ -14,12 +14,14 @@ source:
     - 0003-Ensure-that-clobber-breaks-hard-links.patch
 
 build:
-  number: 0
+  noarch: python
+  number: 1
   entry_points:
     - pip = pip:main
 
 requirements:
-  build:
+  host:
+    - pip
     - python
     - setuptools
   run:
