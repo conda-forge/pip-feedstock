@@ -6,4 +6,4 @@ del *.exe
 del *.exe.manifest
 del pip2*
 del pip3*
-REM del %SP_DIR%\__pycache__\pkg_res*
+:: del %SP_DIR%\__pycache__\pkg_res*
