@@ -7,11 +7,9 @@ package:
 source:
   url: https://pypi.io/packages/source/p/pip/pip-{{ version }}.tar.gz
   sha256: a0e11645ee37c90b40c46d607070c4fd583e2cd46231b1c06e389c5e814eed76
-  patches:
-    - 0003-Ensure-that-clobber-breaks-hard-links.patch
 
 build:
-  number: 0
+  number: 1
   disable_pip: True
   entry_points:
     - pip = pip._internal:main
