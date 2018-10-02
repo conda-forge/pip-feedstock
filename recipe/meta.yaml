@@ -9,7 +9,7 @@ source:
   sha256: a0e11645ee37c90b40c46d607070c4fd583e2cd46231b1c06e389c5e814eed76
 
 build:
-  number: 1
+  number: 1001
   disable_pip: True
   entry_points:
     - pip = pip._internal:main
