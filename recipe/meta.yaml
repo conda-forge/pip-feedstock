@@ -1,4 +1,4 @@
-{% set version = "19.2" %}
+{% set version = "19.2.1" %}
 
 package:
   name: pip
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pip/pip-{{ version }}.tar.gz
-  sha256: aa6fdd80d13caac75d92b5eced06778712859b1606ba92d62389c11be12b2dad
+  sha256: 258d702483dd749400aec59c23d638a5b2249ae28a0f478b6cab12ad45681a80
 
 build:
   number: 0
