@@ -9,6 +9,7 @@ source:
   sha256: 7db0c8ea4c7ea51c8049640e8e6e7fde949de672bfa4949920675563a5a6967f
 
 build:
+  noarch: python
   number: 1
   disable_pip: True
   entry_points:
