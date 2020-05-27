@@ -10,17 +10,18 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   disable_pip: true
   entry_points:
     - pip = pip._internal.cli.main:main
+    - pip3 = pip._internal.cli.main:main
 
 requirements:
   host:
-    - python
+    - python >=3
     - setuptools
   run:
-    - python
+    - python >=3
     - setuptools
     - wheel
 
