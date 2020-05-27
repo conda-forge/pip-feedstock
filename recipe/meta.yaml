@@ -18,10 +18,10 @@ build:
 
 requirements:
   host:
-    - python  # [py>30]
+    - python 3
     - setuptools
   run:
-    - python  # [py>30]
+    - python 3
     - setuptools
     - wheel
 
