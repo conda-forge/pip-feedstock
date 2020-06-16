@@ -1,4 +1,13 @@
 {% set version = "20.1.1" %}
+{% set debug = os.environ.get('PY_INTERP_DEBUG', '') %}
+{% if debug != '' %}
+  {% set debug = "_dbg" %}
+{% endif %}
+{% if debug != '' %}
+  {% set variant = "cpython_dbg" %}
+{% else %}
+  {% set variant = "cpython" %}
+{% endif %}
 
 package:
   name: pip
@@ -14,6 +23,7 @@ build:
   noarch: python
   number: 1
   disable_pip: true
+  string: py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}{{ debug }}
   entry_points:
     - pip = pip._internal.cli.main:main
     - pip3 = pip._internal.cli.main:main
