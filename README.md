@@ -5,11 +5,13 @@ Home: https://pip.pypa.io/en/stable/
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pip-feedstock/blob/master/LICENSE.txt)
 
 Summary: PyPA recommended tool for installing Python packages
 
+Development: https://github.com/pypa/pip
 
+Documentation: https://pip.pypa.io/en/stable/
 
 Current build status
 ====================
