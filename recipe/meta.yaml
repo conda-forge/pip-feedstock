@@ -16,8 +16,6 @@ package:
 source:
   url: https://pypi.io/packages/source/p/pip/pip-{{ version }}.tar.gz
   sha256: 99bbde183ec5ec037318e774b0d8ae0a64352fe53b2c7fd630be1d07e94f41e5
-  patches:
-    - 0001-Win32-Fix-Py_DEBUG-determination-in-_derive_abi-in-w.patch
 
 build:
   number: 0
