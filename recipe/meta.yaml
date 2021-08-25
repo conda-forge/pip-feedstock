@@ -27,11 +27,11 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python
     - setuptools
     - wheel
   run:
-    - python >=3.6
+    - python
     - setuptools
     - wheel
 
