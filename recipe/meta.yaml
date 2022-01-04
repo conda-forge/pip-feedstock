@@ -7,10 +7,18 @@ package:
 source:
   url: https://pypi.io/packages/source/p/pip/pip-{{ version }}.tar.gz
   sha256: fd11ba3d0fdb4c07fbc5ecbba0b1b719809420f25038f8ee3cd913d3faa3033a
+  patches:
+    # 2021/01/04: hmaarrfk
+    # pip version check checks against pypi to see if the version
+    # is up to date and provides users with a warning if the package
+    # isn't. This isn't really want we want for conda-forge users
+    # since they might be tempted to use pip directly causing
+    # potentially breaking their system.
+    - disable_pip_version_check.patch
 
 build:
   noarch: python
-  number: 0
+  number: 1
   disable_pip: true
   entry_points:
     - pip = pip._internal.cli.main:main
