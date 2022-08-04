@@ -1,4 +1,4 @@
-{% set version = "22.2.1" %}
+{% set version = "22.2.2" %}
 
 package:
   name: pip
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pip/pip-{{ version }}.tar.gz
-  sha256: 50516e47a2b79e77446f0d05649f0d53772c192571486236b1905492bfc24bac
+  sha256: 3fd1929db052f056d7a998439176d3333fa1b3f6c1ad881de1885c0717608a4b
 
 build:
   noarch: python
