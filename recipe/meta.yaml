@@ -5,8 +5,8 @@ package:
   version: {{ version }}
 
 source:
-    url: https://pypi.io/packages/source/p/pip/pip-{{ version }}.tar.gz
-    sha256: e5458a0b89f2755e0ee8c0c77613fe5273e05f337907874d64f13171a898a7ff
+  url: https://pypi.io/packages/source/p/pip/pip-{{ version }}.tar.gz
+  sha256: e5458a0b89f2755e0ee8c0c77613fe5273e05f337907874d64f13171a898a7ff
 
 build:
   noarch: python
