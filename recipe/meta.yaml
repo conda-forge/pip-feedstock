@@ -20,8 +20,8 @@ requirements:
   host:
     - python >=3.13.a0           # [not with_setuptools_wheel]
     - python >=3.8,<3.13.a0      # [with_setuptools_wheel]
-    - setuptools                 # [with_setuptools_wheel]
-    - wheel                      # [with_setuptools_wheel]
+    - setuptools
+    - wheel
   run:
     - python >=3.13.a0           # [not with_setuptools_wheel]
     - python >=3.8,<3.13.a0      # [with_setuptools_wheel]
