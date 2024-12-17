@@ -30,7 +30,8 @@ requirements:
 
 test:
   requires:
-    - python {{ python_min }}
+    - python {{ python_min }}              # [with_setuptools_wheel]
+    - python 3.13.0                        # [not with_setuptools_wheel]
   commands:
     - pip -h
     - pip list
