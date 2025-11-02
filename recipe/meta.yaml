@@ -18,21 +18,14 @@ build:
 
 requirements:
   host:
-    - python >=3.13.0a0                    # [not with_setuptools_wheel]
-    - python >={{ python_min }},<3.13.0a0  # [with_setuptools_wheel]
+    - python {{ python_min }}
     - flit-core
+  run:
+    - python >={{ python_min }}
     - setuptools
     - wheel
-  run:
-    - python >=3.13.0a0                    # [not with_setuptools_wheel]
-    - python >={{ python_min }},<3.13.0a0  # [with_setuptools_wheel]
-    - setuptools                           # [with_setuptools_wheel]
-    - wheel                                # [with_setuptools_wheel]
 
 test:
-  requires:
-    - python {{ python_min }}              # [with_setuptools_wheel]
-    - python 3.13.0                        # [not with_setuptools_wheel]
   commands:
     - pip -h
     - pip list
