@@ -40,7 +40,7 @@ tests:
   - python:
       imports:
         - pip
-      python_version: ${{ python_min }}.*
+      python_version: ${{ python_min ~ ".*" if with_setuptools_wheel else "3.13.0" }}
   - requirements:
       run:
         - if: with_setuptools_wheel
