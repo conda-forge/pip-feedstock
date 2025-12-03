@@ -1,0 +1,70 @@
+schema_version: 1
+
+context:
+  version: 25.3
+
+package:
+  name: pip
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/p/pip/pip-${{ version }}.tar.gz
+  sha256: 8d0538dbbd7babbd207f261ed969c65de439f6bc9e5dbd3b3b9a77f25d95f343
+
+build:
+  number: 1
+  noarch: python
+  python:
+    entry_points:
+      - pip = pip._internal.cli.main:main
+      - pip3 = pip._internal.cli.main:main
+
+requirements:
+  host:
+    - if: not with_setuptools_wheel
+      then: python >=3.13.0a0
+    - if: with_setuptools_wheel
+      then: python >=${{ python_min }},<3.13.0a0
+    - flit-core
+    - setuptools
+    - wheel
+  run:
+    - if: not with_setuptools_wheel
+      then: python >=3.13.0a0
+    - if: with_setuptools_wheel
+      then: python >=${{ python_min }},<3.13.0a0
+    - if: with_setuptools_wheel
+      then: setuptools
+    - if: with_setuptools_wheel
+      then: wheel
+
+tests:
+  - python:
+      imports:
+        - pip
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - if: with_setuptools_wheel
+          then: python ${{ python_min }}
+        - if: not with_setuptools_wheel
+          then: python 3.13.0
+    script:
+      - pip -h
+      - pip list
+
+about:
+  license: MIT
+  license_file: LICENSE.txt
+  summary: PyPA recommended tool for installing Python packages
+  homepage: https://pip.pypa.io/en/stable/
+  repository: https://github.com/pypa/pip
+  documentation: https://pip.pypa.io/en/stable/
+
+extra:
+  recipe-maintainers:
+    - jakirkham
+    - msarahan
+    - pelson
+    - ocefpaf
+    - mingwandroid
