@@ -21,22 +21,20 @@ build:
 
 requirements:
   host:
-    - if: not with_setuptools_wheel
-      then: python >=3.13.0a0
     - if: with_setuptools_wheel
-      then: python >=${{ python_min }},<3.13.0a0
+      then: python ${{ python_min }}.*
+      else: python >=3.13.0a0
     - flit-core
     - setuptools
     - wheel
   run:
-    - if: not with_setuptools_wheel
-      then: python >=3.13.0a0
     - if: with_setuptools_wheel
-      then: python >=${{ python_min }},<3.13.0a0
-    - if: with_setuptools_wheel
-      then: setuptools
-    - if: with_setuptools_wheel
-      then: wheel
+      then:
+        - python >=${{ python_min }}
+        - setuptools
+        - wheel
+      else:
+        - python >=3.13.0a0
 
 tests:
   - python:
@@ -47,8 +45,7 @@ tests:
       run:
         - if: with_setuptools_wheel
           then: python ${{ python_min }}
-        - if: not with_setuptools_wheel
-          then: python 3.13.0
+          else: python 3.13.0
     script:
       - pip -h
       - pip list
