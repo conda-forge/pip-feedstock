@@ -40,12 +40,12 @@ tests:
   - python:
       imports:
         - pip
-      python_version: ${{ python_min ~ ".*" if with_setuptools_wheel else "3.13.0" }}
+      python_version: ${{ python_min ~ ".*" if with_setuptools_wheel else "3.13.*" }}
   - requirements:
       run:
         - if: with_setuptools_wheel
           then: python ${{ python_min }}
-          else: python 3.13.0
+          else: python 3.13.*
     script:
       - pip -h
       - pip list
