@@ -1,12 +1,12 @@
-{% set version = "26.2.1" %}
+{% set version = "26.2.2" %}
 
 package:
   name: pip
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/p/pip/pip-{{ version }}.tar.gz
-  sha256: f6ad667e89a1fe78046c8f13232b247200f5258d7828f3f7883d660878e0813f
+  url: https://files.pythonhosted.org/packages/source/p/pip/pip-{{ version }}.tar.gz
+  sha256: 3a8e5c800492787f33a4114ef54444546c340df428974ebba17e0fd47e11af2f
 
 build:
   noarch: python
