@@ -7,10 +7,13 @@ package:
 source:
   url: https://files.pythonhosted.org/packages/source/p/pip/pip-{{ version }}.tar.gz
   sha256: 3a8e5c800492787f33a4114ef54444546c340df428974ebba17e0fd47e11af2f
+  patches:
+    # use the CA bundle from conda-forge's ca-certificates instead of the vendored one
+    - use-conda-ca-certificates.patch
 
 build:
   noarch: python
-  number: 0
+  number: 1
   disable_pip: true
   entry_points:
     - pip = pip._internal.cli.main:main
@@ -26,6 +29,8 @@ requirements:
   run:
     - python >=3.13.0a0                    # [not with_setuptools_wheel]
     - python >={{ python_min }},<3.13.0a0  # [with_setuptools_wheel]
+    # at least as new as the vendored certifi bundle that was removed
+    - ca-certificates >=2026.10.19
     - setuptools                           # [with_setuptools_wheel]
     - wheel                                # [with_setuptools_wheel]
 
@@ -35,6 +40,7 @@ test:
     - python 3.13.0                        # [not with_setuptools_wheel]
   commands:
     - pip -h
+    - python -c "import os; from pip._vendor import certifi; assert os.path.isfile(certifi.where()), certifi.where()"
     - pip list
   imports:
     - pip
