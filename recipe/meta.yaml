@@ -29,7 +29,8 @@ requirements:
   run:
     - python >=3.13.0a0                    # [not with_setuptools_wheel]
     - python >={{ python_min }},<3.13.0a0  # [with_setuptools_wheel]
-    - ca-certificates
+    # at least as new as the vendored certifi bundle that was removed
+    - ca-certificates >=2026.10.19
     - setuptools                           # [with_setuptools_wheel]
     - wheel                                # [with_setuptools_wheel]
 
