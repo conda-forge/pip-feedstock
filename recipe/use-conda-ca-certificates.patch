@@ -83,10 +83,10 @@
 -            atexit.register(exit_cacert_ctx)
 +def where() -> str:
 +    if sys.platform == "win32":
-+        path = os.path.join(sys.prefix, "Library", "ssl", "cacert.pem")
++        path = os.path.join(sys.base_prefix, "Library", "ssl", "cacert.pem")
 +        if os.path.isfile(path):
 +            return path
-+    return os.path.join(sys.prefix, "ssl", "cacert.pem")
++    return os.path.join(sys.base_prefix, "ssl", "cacert.pem")
  
 -        return _CACERT_PATH
  
