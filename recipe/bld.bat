@@ -1,3 +1,6 @@
+del src\pip\_vendor\certifi\cacert.pem
+if errorlevel 1 exit 1
+
 set PYTHONPATH=".\src"
 %PYTHON% -m pip install . -vv
 if errorlevel 1 exit 1
