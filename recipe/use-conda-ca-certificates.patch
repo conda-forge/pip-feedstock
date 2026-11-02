@@ -1,6 +1,6 @@
 --- a/src/pip/_vendor/certifi/core.py
 +++ b/src/pip/_vendor/certifi/core.py
-@@ -3,81 +3,21 @@
+@@ -3,81 +3,22 @@
  ~~~~~~~~~~
  
  This module returns the installation location of cacert.pem or its contents.
@@ -82,9 +82,10 @@
 -            _CACERT_PATH = str(_CACERT_CTX.__enter__())
 -            atexit.register(exit_cacert_ctx)
 +def where() -> str:
-+    path = os.path.join(sys.prefix, "Library", "ssl", "cacert.pem")
-+    if os.path.isfile(path):
-+        return path
++    if sys.platform == "win32":
++        path = os.path.join(sys.prefix, "Library", "ssl", "cacert.pem")
++        if os.path.isfile(path):
++            return path
 +    return os.path.join(sys.prefix, "ssl", "cacert.pem")
  
 -        return _CACERT_PATH
