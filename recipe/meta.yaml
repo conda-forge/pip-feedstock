@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 2
   disable_pip: true
   entry_points:
     - pip = pip._internal.cli.main:main
@@ -41,6 +41,10 @@ test:
   commands:
     - pip -h
     - python -c "import os; from pip._vendor import certifi; assert os.path.isfile(certifi.where()), certifi.where()"
+    # the CA bundle must also be found from inside a venv
+    - python -m venv --system-site-packages --without-pip test-venv
+    - test-venv/bin/python -c "import os, sys; from pip._vendor import certifi; assert sys.prefix != sys.base_prefix; assert os.path.isfile(certifi.where()), certifi.where()"  # [unix]
+    - test-venv\Scripts\python -c "import os, sys; from pip._vendor import certifi; assert sys.prefix != sys.base_prefix; assert os.path.isfile(certifi.where()), certifi.where()"  # [win]
     - pip list
   imports:
     - pip
