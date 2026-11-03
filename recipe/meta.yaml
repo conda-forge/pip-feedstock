@@ -1,4 +1,4 @@
-{% set version = "26.2.2" %}
+{% set version = "26.3" %}
 
 package:
   name: pip
@@ -6,14 +6,14 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/p/pip/pip-{{ version }}.tar.gz
-  sha256: 3a8e5c800492787f33a4114ef54444546c340df428974ebba17e0fd47e11af2f
+  sha256: 6c36ae7da8695be67e3cd9f7d87919667ced53f57ce2ede75d89b5912ed2bc4c
   patches:
     # use the CA bundle from conda-forge's ca-certificates instead of the vendored one
     - use-conda-ca-certificates.patch
 
 build:
   noarch: python
-  number: 2
+  number: 0
   disable_pip: true
   entry_points:
     - pip = pip._internal.cli.main:main
