@@ -2,7 +2,7 @@
 
 package:
   name: pip
-  version: {{ version }}
+  version: "{{ version }}"
 
 source:
   url: https://files.pythonhosted.org/packages/source/p/pip/pip-{{ version }}.tar.gz
